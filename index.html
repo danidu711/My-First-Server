@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Information System</title>
     <link rel="stylesheet" type="text/css" href="styles_home.css">
+    <style>
+        /* Initially hide the content */
+        body {
+            display: none;
+        }
+    </style>
     <script>
         function checkAccess() {
-            const passwords = ["37182804981098", "49839470973097497", "7394737497374"]; // Add your passwords here
+            const passwords = ["37182804981098", "49839470973097497", "7394737497374"];
             let userInput;
 
             // First password prompt
             userInput = prompt("Please enter the first password to access the Student Information System:");
             if (userInput !== passwords[0]) {
                 alert("Access denied! Incorrect password.");
-                document.body.innerHTML = ""; // Clear the page content if the password is incorrect
-                return;
+                return; // Stop execution if incorrect
             }
 
             // Second password prompt
             userInput = prompt("Please enter the second password to continue:");
             if (userInput !== passwords[1]) {
                 alert("Access denied! Incorrect password.");
-                document.body.innerHTML = ""; // Clear the page content if the password is incorrect
                 return;
             }
 
@@ -30,16 +34,19 @@
             userInput = prompt("Please enter the third password to access the final section:");
             if (userInput !== passwords[2]) {
                 alert("Access denied! Incorrect password.");
-                document.body.innerHTML = ""; // Clear the page content if the password is incorrect
                 return;
             }
 
-            // If all passwords are correct, access is granted
+            // If all passwords are correct, show the page
+            document.body.style.display = "block";
             alert("Access granted! Welcome.");
         }
+
+        // Run checkAccess when the page loads
+        window.onload = checkAccess;
     </script>
 </head>
-<body onload="checkAccess()">
+<body>
     <header>
         <h1>Welcome to the Student Information System</h1>
     </header>
@@ -50,13 +57,12 @@
                 <tr>
                     <th>Admission Number</th>
                     <th>Name</th>
-                    <th>Phone Number</th>
+                    <th>Phone</th>
                     <th>Aesthetic Subject</th>
                     <th>Leadership</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Replace these rows with real data -->
                 <tr>
                     <td>001</td>
                     <td>John Doe</td>
@@ -71,7 +77,6 @@
                     <td>Art</td>
                     <td>Class Monitor</td>
                 </tr>
-                <!-- Add more rows as needed -->
             </tbody>
         </table>
     </main>
