@@ -7,14 +7,35 @@
     <link rel="stylesheet" type="text/css" href="styles_home.css">
     <script>
         function checkAccess() {
-            const password = "37182804981098"; // Updated password
-            const userInput = prompt("Please enter the password to access the Student Information System:");
-            if (userInput !== password) {
-                alert("Access denied!");
+            const passwords = ["37182804981098", "49839470973097497", "7394737497374"]; // Add your passwords here
+            let userInput;
+
+            // First password prompt
+            userInput = prompt("Please enter the first password to access the Student Information System:");
+            if (userInput !== passwords[0]) {
+                alert("Access denied! Incorrect password.");
                 document.body.innerHTML = ""; // Clear the page content if the password is incorrect
-            } else {
-                alert("Access granted! Welcome.");
+                return;
             }
+
+            // Second password prompt
+            userInput = prompt("Please enter the second password to continue:");
+            if (userInput !== passwords[1]) {
+                alert("Access denied! Incorrect password.");
+                document.body.innerHTML = ""; // Clear the page content if the password is incorrect
+                return;
+            }
+
+            // Third password prompt
+            userInput = prompt("Please enter the third password to access the final section:");
+            if (userInput !== passwords[2]) {
+                alert("Access denied! Incorrect password.");
+                document.body.innerHTML = ""; // Clear the page content if the password is incorrect
+                return;
+            }
+
+            // If all passwords are correct, access is granted
+            alert("Access granted! Welcome.");
         }
     </script>
 </head>
@@ -29,7 +50,7 @@
                 <tr>
                     <th>Admission Number</th>
                     <th>Name</th>
-                    <th>Phone</th>
+                    <th>Phone Number</th>
                     <th>Aesthetic Subject</th>
                     <th>Leadership</th>
                 </tr>
@@ -55,7 +76,7 @@
         </table>
     </main>
     <footer>
-        <p>&copy; 2025 Student Information System</p>
+        <p>&copy; 2025 Student Information System Made By Danidu</p>
     </footer>
 </body>
 </html>
